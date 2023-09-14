@@ -26,6 +26,18 @@ const routes = [
         name: 'app-vue2-webpack',
         meta: {},
         component: () => import('@/components/SubApp.vue')
+      },
+      {
+        path: '/satco2-map',
+        name: 'satco2-map',
+        meta: {},
+        component: () => import('@/views/MapIframe.vue')
+      },
+      {
+        path: '/login',
+        name: 'login',
+        meta: {},
+        component: () => import('@/views/Login.vue')
       }
     ]
   }

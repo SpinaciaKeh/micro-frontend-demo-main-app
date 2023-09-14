@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { HomeFilled, Lightning, MoonNight } from '@element-plus/icons-vue'
+import { HomeFilled, Lightning, MapLocation, MoonNight, User } from '@element-plus/icons-vue'
 import router from '@/router'
 </script>
 
@@ -8,6 +8,9 @@ import router from '@/router'
     <div class="navbar">
       <el-icon class="navbar-btn home" @click="router.push('/')">
         <HomeFilled/>
+      </el-icon>
+      <el-icon class="navbar-btn home" @click="router.push('/satco2-map')">
+        <MapLocation/>
       </el-icon>
       <div class="navbar-btn push">
         <el-icon>
@@ -21,6 +24,9 @@ import router from '@/router'
         </el-icon>
         <router-link to="/app/app-vue2-webpack">App2</router-link>
       </div>
+      <el-icon class="normal-btn" @click="router.push('/login')">
+        <User/>
+      </el-icon>
     </div>
     <router-view/>
   </div>
@@ -109,6 +115,15 @@ import router from '@/router'
   .home:hover {
     color: #f3e588;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(255, 255, 255, 0.25);
+  }
+  
+  .normal-btn {
+    margin: 0 1rem;
+    cursor: pointer;
+    
+    &:hover {
+      color: #f3e588;
+    }
   }
 }
 </style>
