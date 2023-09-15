@@ -1,6 +1,17 @@
 <script lang="ts" setup>
-import { HomeFilled, Lightning, MapLocation, MoonNight, PictureRounded, User } from '@element-plus/icons-vue'
+import {
+  HomeFilled,
+  Lightning,
+  MapLocation,
+  MoonNight,
+  PictureRounded,
+  SwitchButton,
+  User
+} from '@element-plus/icons-vue'
 import router from '@/router'
+import { useAuthStore } from '@/store'
+
+const authStore = useAuthStore()
 </script>
 
 <template>
@@ -27,8 +38,11 @@ import router from '@/router'
         </el-icon>
         <router-link to="/app/app-vue2-webpack">App2</router-link>
       </div>
-      <el-icon class="normal-btn" @click="router.push('/login')">
+      <el-icon v-if="!authStore.hasToken" class="normal-btn" @click="router.push('/login')">
         <User/>
+      </el-icon>
+      <el-icon v-else class="normal-btn" @click="authStore.logout()">
+        <SwitchButton/>
       </el-icon>
     </div>
     <router-view/>
@@ -36,30 +50,6 @@ import router from '@/router'
 </template>
 
 <style lang="scss" scoped>
-.fancy-gradient {
-  background-color: var(--gradient_bg_color);
-  background-image: radial-gradient(
-      var(--gradient_spot1_w) var(--gradient_spot1_h) at left var(--gradient_spot1_x) top var(--gradient_spot1_y),
-      var(--gradient_spot1_color),
-      transparent
-  ),
-  radial-gradient(
-      var(--gradient_spot2_w) var(--gradient_spot2_h) at left var(--gradient_spot2_x) top var(--gradient_spot2_y),
-      var(--gradient_spot2_color),
-      transparent
-  ),
-  radial-gradient(
-      var(--gradient_spot3_w) var(--gradient_spot3_h) at left var(--gradient_spot3_x) top var(--gradient_spot3_y),
-      var(--gradient_spot3_color),
-      transparent
-  ),
-  radial-gradient(
-      var(--gradient_spot4_w) var(--gradient_spot4_h) at left var(--gradient_spot4_x) top var(--gradient_spot4_y),
-      var(--gradient_spot4_color),
-      transparent
-  );
-}
-
 .home-container {
   position: absolute;
   top: 0;
@@ -86,10 +76,11 @@ import router from '@/router'
     display: flex;
     align-items: center;
     flex-direction: row;
+    height: 1.4rem;
     margin: 0 1rem;
-    padding: 5px 20px;
+    padding: 0.2rem 1rem;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 0.9rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25), -2px -2px 5px rgba(255, 255, 255, 0.2);
     gap: 10px;
     
@@ -107,16 +98,16 @@ import router from '@/router'
   }
   
   .navbar-btn:not(.home):hover {
-    color: #f3e588;
+    color: var(--highlight-yellow);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.3);
     
     a {
-      color: #f3e588;
+      color: var(--highlight-yellow);
     }
   }
   
   .home:hover {
-    color: #f3e588;
+    color: var(--highlight-yellow);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(255, 255, 255, 0.25);
   }
   
@@ -125,7 +116,7 @@ import router from '@/router'
     cursor: pointer;
     
     &:hover {
-      color: #f3e588;
+      color: var(--highlight-yellow);
     }
   }
 }

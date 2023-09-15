@@ -14,15 +14,25 @@
         </el-icon>
       </template>
     </el-input>
+    <el-button class="login-item login-btn" @click="login">
+      Login
+    </el-button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { Iphone, Key } from '@element-plus/icons-vue'
 import { ref } from 'vue'
+import { useAuthStore } from '@/store'
 
 const username = ref<string>('')
 const password = ref<string>('')
+
+const authStore = useAuthStore()
+
+const login = () => {
+  authStore.login({username: username.value, password: password.value})
+}
 </script>
 
 <style lang="scss" scoped>
@@ -54,7 +64,7 @@ const password = ref<string>('')
       box-shadow: 0 0 0 1px #dcdfe6 inset;
       
       &.is-focus {
-        box-shadow: 0 0 0 2px #f3e588 inset;
+        box-shadow: 0 0 0 2px var(--highlight-yellow) inset;
       }
     }
     
@@ -72,6 +82,21 @@ const password = ref<string>('')
       font-family: Consolas, serif;
       padding-left: 1rem;
       color: #ffffff;
+    }
+  }
+  
+  .login-btn {
+    font-family: Consolas, serif;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-out;
+    color: #ffffff;
+    border-radius: 1.5rem;
+    background-color: rgba(249, 249, 249, 0.3);
+    
+    &:hover {
+      color: var(--highlight-yellow);
+      border: 1px solid rgba(48, 49, 49, 0.7);
+      background-color: rgba(48, 49, 49, 0.7);
     }
   }
 }

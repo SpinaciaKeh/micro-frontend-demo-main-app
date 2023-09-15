@@ -1,11 +1,28 @@
 <template>
   <div class="iframe-container">
-    <iframe height="100%" src="http://localhost:5000/page" width="100%"/>
+    <iframe id="proxyIfr" height="100%" src="http://localhost:5000/page" width="100%"/>
+    <el-button v-if="!isLoading" class="enter-btn fancy-gradient" @click="enterSourcePage">Enter source page ->
+    </el-button>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { nextTick, ref } from 'vue'
 
+const isLoading = ref<boolean>(true)
+
+nextTick(() => {
+  const ifrDom = document.getElementById('proxyIfr')
+  ifrDom!.onload = () => {
+    isLoading.value = false
+  }
+})
+
+const enterSourcePage = () => {
+  const a = document.createElement('a')
+  a.href = 'https://www.underconsideration.com/artofthemenu/'
+  a.click()
+}
 </script>
 
 <style lang="scss" scoped>
@@ -18,5 +35,26 @@
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
+}
+
+.enter-btn {
+  font-family: Consolas, serif;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  height: 2rem;
+  transition: all 0.2s ease-out;
+  color: #fff;
+  border-radius: 1rem;
+  background-position: top left;
+  background-size: 120% 150%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+  
+  &:hover {
+    transform: scale(1.02);
+    color: #333;
+    background-position: bottom right;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+  }
 }
 </style>

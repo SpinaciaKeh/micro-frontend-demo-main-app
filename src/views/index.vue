@@ -2,8 +2,8 @@
   <div class="homepage-box">
     <div class="title first">Micro Frontend Demo</div>
     <div class="title second">with Qiankun framework</div>
-    <template v-if="token">
-      <div class="title third">Welcome, {{ userName }}.</div>
+    <template v-if="authStore.hasToken">
+      <div class="title third">Welcome, {{ authStore.username }}.</div>
     </template>
     <template v-else>
       <el-button class="handle-btn login" @click="router.push('/login')">Login</el-button>
@@ -12,11 +12,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import router from '@/router'
+import { useAuthStore } from '@/store'
 
-const token = ref<string>('')
-const userName = ref<string>('Admin')
+const authStore = useAuthStore()
 </script>
 
 <style lang="scss" scoped>
@@ -37,7 +36,7 @@ const userName = ref<string>('Admin')
   gap: 2rem;
   
   .title {
-    font-family: Consolas;
+    font-family: Consolas, serif;
     
     &.first {
       font-size: 3rem;
@@ -66,8 +65,8 @@ const userName = ref<string>('Admin')
     background-color: transparent;
     
     &:hover {
-      color: #f3e588;
-      border: 2px solid #f3e588;
+      color: var(--highlight-yellow);
+      border: 2px solid var(--highlight-yellow);
       background-color: rgba(255, 255, 255, 0.1);
     }
   }
