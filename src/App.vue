@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { HomeFilled, Lightning, MapLocation, MoonNight, User } from '@element-plus/icons-vue'
+import { HomeFilled, Lightning, MapLocation, MoonNight, PictureRounded, User } from '@element-plus/icons-vue'
 import router from '@/router'
 </script>
 
@@ -9,8 +9,11 @@ import router from '@/router'
       <el-icon class="navbar-btn home" @click="router.push('/')">
         <HomeFilled/>
       </el-icon>
-      <el-icon class="navbar-btn home" @click="router.push('/satco2-map')">
+      <el-icon class="navbar-btn home" @click="router.push('/map')">
         <MapLocation/>
+      </el-icon>
+      <el-icon class="navbar-btn home" @click="router.push('/other')">
+        <PictureRounded/>
       </el-icon>
       <div class="navbar-btn push">
         <el-icon>

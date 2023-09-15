@@ -28,10 +28,15 @@ const routes = [
         component: () => import('@/components/SubApp.vue')
       },
       {
-        path: '/satco2-map',
-        name: 'satco2-map',
+        path: '/map',
+        name: 'map',
         meta: {},
         component: () => import('@/views/MapIframe.vue')
+      },
+      {
+        path: '/other',
+        name: 'other',
+        component: () => import('@/views/ProxyIframe.vue')
       },
       {
         path: '/login',

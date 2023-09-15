@@ -52,5 +52,15 @@ export default defineConfig({
     alias: {
       '@': pathSrc
     }
+  },
+  server: {
+    port: 5000,
+    proxy: {
+      '/page': {
+        target: 'https://www.underconsideration.com/artofthemenu/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/page/, '')
+      }
+    }
   }
 })
