@@ -1,4 +1,6 @@
-export const users = [
+import { LoginParams } from '@/types/auth.type.ts'
+
+export const users: LoginParams[] = [
   {
     username: 'Admin',
     password: '123456'

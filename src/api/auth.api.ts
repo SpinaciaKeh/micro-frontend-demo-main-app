@@ -1,5 +1,6 @@
 import { LoginParams, SimulateRequest } from '@/types/auth.type.ts'
 import { users } from '@/config/user.config.ts'
+import { generateToken } from '@/utils/auth.utils.ts'
 
 export function loginApi(params: LoginParams) {
   return new Promise<SimulateRequest>((resolve, reject) => {
@@ -22,7 +23,7 @@ export function loginApi(params: LoginParams) {
           code: 200,
           msg: 'success',
           data: {
-            token: 'token-123456'
+            token: generateToken()
           }
         })
       }
