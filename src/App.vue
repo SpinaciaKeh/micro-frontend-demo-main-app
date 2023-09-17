@@ -20,10 +20,10 @@ const authStore = useAuthStore()
       <el-icon class="navbar-btn home" @click="router.push('/')">
         <HomeFilled/>
       </el-icon>
-      <el-icon class="navbar-btn home" @click="router.push('/map')">
+      <el-icon v-if="authStore.hasToken" class="navbar-btn home" @click="router.push('/map')">
         <MapLocation/>
       </el-icon>
-      <el-icon class="navbar-btn home" @click="router.push('/other')">
+      <el-icon v-if="authStore.hasToken" class="navbar-btn home" @click="router.push('/other')">
         <PictureRounded/>
       </el-icon>
       <div class="navbar-btn push">

@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="page-container login">
     <el-input v-model="username" class="login-item" placeholder="Please input username">
       <template #append>
         <el-icon>
@@ -7,7 +7,7 @@
         </el-icon>
       </template>
     </el-input>
-    <el-input v-model="password" class="login-item" placeholder="Please input password">
+    <el-input v-model="password" type="password" class="login-item" placeholder="Please input password">
       <template #append>
         <el-icon>
           <Key/>
@@ -36,20 +36,7 @@ const login = () => {
 </script>
 
 <style lang="scss" scoped>
-.login-container {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: calc(100% - 8rem);
-  margin: 2rem;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  gap: 2rem;
-  backdrop-filter: blur(5px);
+.login {
   
   .login-item {
     font-size: 1rem;
@@ -80,8 +67,9 @@ const login = () => {
     
     :deep .el-input__inner {
       font-family: Consolas, serif;
-      padding-left: 1rem;
+      background: transparent;
       color: #ffffff;
+      padding-left: 1rem;
     }
   }
   

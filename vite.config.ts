@@ -57,7 +57,7 @@ export default defineConfig({
     port: 5000,
     proxy: {
       '/page': {
-        target: 'https://www.underconsideration.com/artofthemenu/',
+        target: 'https://www.redis.agency/webflow',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/page/, '')
       }

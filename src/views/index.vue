@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage-box">
+  <div class="page-container home">
     <div class="title first">Micro Frontend Demo</div>
     <div class="title second">with Qiankun framework</div>
     <template v-if="authStore.hasToken">
@@ -19,27 +19,15 @@ const authStore = useAuthStore()
 </script>
 
 <style lang="scss" scoped>
-.homepage-box {
-  font-family: Consolas, serif;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: calc(100% - 10rem);
-  margin: 2rem;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  gap: 2rem;
+.home {
   
   .title {
+    transform: translateY(-3rem);
     font-family: Consolas, serif;
     
     &.first {
-      font-size: 3rem;
+      font-family: AlumFreePromotional, serif;
+      font-size: 5rem;
       //filter: drop-shadow(5px 5px 0 rgba(255, 246, 0, 0.2));
     }
     
@@ -56,6 +44,7 @@ const authStore = useAuthStore()
   
   .handle-btn {
     font-size: 1rem;
+    font-family: Consolas, serif;
     width: 10rem;
     height: 3rem;
     margin-top: 4rem;

@@ -22,7 +22,7 @@ export const useAuthStore = defineStore('auth', () => {
     loginApi(params).then((res: SimulateRequest) => {
       const data = res.data.token
       token.value = data
-      username.value = 'Admin'
+      username.value = params.username
       setCookie(data)
       ElMessage.success('Login successfully!')
       router.push('/home')

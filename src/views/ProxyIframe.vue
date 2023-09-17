@@ -1,5 +1,5 @@
 <template>
-  <div class="iframe-container">
+  <div class="page-container">
     <iframe id="proxyIfr" height="100%" src="http://localhost:5000/page" width="100%"/>
     <el-button v-if="!isLoading" class="enter-btn fancy-gradient" @click="enterSourcePage">Enter source page ->
     </el-button>
@@ -26,17 +26,6 @@ const enterSourcePage = () => {
 </script>
 
 <style lang="scss" scoped>
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  height: calc(100% - 8rem);
-  margin: 2rem;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-}
-
 .enter-btn {
   font-family: Consolas, serif;
   position: absolute;
@@ -45,16 +34,20 @@ const enterSourcePage = () => {
   height: 2rem;
   transition: all 0.2s ease-out;
   color: #fff;
+  border: none;
   border-radius: 1rem;
   background-position: top left;
-  background-size: 120% 150%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+  background-size: 150% 100%;
+  background-color: #82afd5;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.3), inset 0 0 0 1px #ffffff;
   
   &:hover {
     transform: scale(1.02);
-    color: #333;
+    transform-origin: 1rem 1rem;
+    color: var(--highlight-yellow);
     background-position: bottom right;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), inset 2px 2px 5px rgba(255, 255, 255, 0.7), inset 0 0 0 1px #ffffff;
   }
 }
 </style>
