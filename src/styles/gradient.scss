@@ -1,52 +1,40 @@
 :root {
   --gradient_bg_color: #006dca;
-
+  
   --gradient_spot1_color: #001a39;
-  --gradient_spot1_w: 75%;
-  --gradient_spot1_h: 75%;
-  --gradient_spot1_x: 0%;
-  --gradient_spot1_y: 0%;
-
   --gradient_spot2_color: #9b70ff;
-  --gradient_spot2_w: 75%;
-  --gradient_spot2_h: 75%;
-  --gradient_spot2_x: 100%;
-  --gradient_spot2_y: 0%;
-
   --gradient_spot3_color: #42ffc6;
-  --gradient_spot3_w: 75%;
-  --gradient_spot3_h: 75%;
-  --gradient_spot3_x: 100%;
-  --gradient_spot3_y: 100%;
-
   --gradient_spot4_color: #ff3b8d;
-  --gradient_spot4_w: 75%;
-  --gradient_spot4_h: 75%;
-  --gradient_spot4_x: 0%;
-  --gradient_spot4_y: 100%;
 }
 
 .fancy-gradient {
   background-color: var(--gradient_bg_color);
   background-image: radial-gradient(
-                  var(--gradient_spot1_w) var(--gradient_spot1_h) at left var(--gradient_spot1_x) top var(--gradient_spot1_y),
-                  var(--gradient_spot1_color),
-                  transparent
+      75% 75% at left 0% top 0%,
+      var(--gradient_spot1_color),
+      transparent
   ),
   radial-gradient(
-                  var(--gradient_spot2_w) var(--gradient_spot2_h) at left var(--gradient_spot2_x) top var(--gradient_spot2_y),
-                  var(--gradient_spot2_color),
-                  transparent
+      75% 75% at left 100% top 0%,
+      var(--gradient_spot2_color),
+      transparent
   ),
   radial-gradient(
-                  var(--gradient_spot3_w) var(--gradient_spot3_h) at left var(--gradient_spot3_x) top var(--gradient_spot3_y),
-                  var(--gradient_spot3_color),
-                  transparent
+      75% 75% at left 100% top 100%,
+      var(--gradient_spot3_color),
+      transparent
   ),
   radial-gradient(
-                  var(--gradient_spot4_w) var(--gradient_spot4_h) at left var(--gradient_spot4_x) top var(--gradient_spot4_y),
-                  var(--gradient_spot4_color),
-                  transparent
+      75% 75% at left 0% top 100%,
+      var(--gradient_spot4_color),
+      transparent
   );
 }
 
+.test-gradient {
+  background-color: #ffffff;
+  background-image: radial-gradient(80% 80% at top -20% left 70%, #c7faee, transparent),
+  radial-gradient(100% 100% at top 60% left 20%, #ffdbe3, transparent),
+  radial-gradient(80% 80% at top 0% left 0%, #e2d9f8, transparent),
+  radial-gradient(80% 80% at top 80% left 90%, #d8eeff, transparent);
+}

@@ -7,7 +7,8 @@ module.exports = {
   'extends': [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-essential'
+    'plugin:vue/vue3-essential',
+    'plugin:prettier/recommended'
   ],
   'overrides': [
     {
@@ -32,23 +33,8 @@ module.exports = {
     'vue'
   ],
   'rules': {
-    // 'indent': [
-    //   'error',
-    //   'tab'
-    // ],
-    'indent': [2, 2],
-    // 'linebreak-style': [
-    //   'error',
-    //   'unix'
-    // ],
-    'quotes': [
-      'error',
-      'single'
-    ],
-    'semi': [
-      'error',
-      'never'
-    ],
+    'no-console': process.env.NODE_ENV === 'production' ? ['error', {allow: ['error', 'warn']}] : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/multi-word-component-names': [
       'error',
       {

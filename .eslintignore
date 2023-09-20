@@ -1,0 +1,16 @@
+.idea
+gen
+*.sh
+node_modules
+*.md
+*.woff
+*.ttf
+.vscode
+/public
+/docs
+.husky
+.local
+/bin
+Dockerfile
+.npmrc
+release

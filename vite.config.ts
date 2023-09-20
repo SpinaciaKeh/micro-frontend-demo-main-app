@@ -13,54 +13,49 @@ const pathSrc = path.resolve(__dirname, 'src')
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    eslintPlugin({
-      include: [
-        'src/**/*.ts',
-        'src/**/*.vue',
-        'src/*.ts',
-        'src/*.vue'
-      ]
-    }),
-    AutoImport({
-      imports: ['vue'],
-      resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          prefix: 'Icon'
-        })
-      ],
-      dts: path.resolve(pathSrc, 'auto-imports.d.ts')
-    }),
-    Components({
-      resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          enabledCollections: ['ep']
-        })
-      ],
-      dts: path.resolve(pathSrc, 'components.d.ts')
-    }),
-    Icons({
-      autoInstall: true
-    }),
-    Inspect()
-  ],
-  resolve: {
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
-    alias: {
-      '@': pathSrc
-    }
-  },
-  server: {
-    port: 5000,
-    proxy: {
-      '/page': {
-        target: 'https://www.redis.agency/webflow',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/page/, '')
-      }
-    }
-  }
+	plugins: [
+		vue(),
+		eslintPlugin({
+			include: ['src/**/*.ts', 'src/**/*.vue', 'src/*.ts', 'src/*.vue']
+		}),
+		AutoImport({
+			imports: ['vue'],
+			resolvers: [
+				ElementPlusResolver(),
+				IconsResolver({
+					prefix: 'Icon'
+				})
+			],
+			dts: path.resolve(pathSrc, 'auto-imports.d.ts')
+		}),
+		Components({
+			resolvers: [
+				ElementPlusResolver(),
+				IconsResolver({
+					enabledCollections: ['ep']
+				})
+			],
+			dts: path.resolve(pathSrc, 'components.d.ts')
+		}),
+		Icons({
+			autoInstall: true
+		}),
+		Inspect()
+	],
+	resolve: {
+		extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
+		alias: {
+			'@': pathSrc
+		}
+	},
+	server: {
+		port: 5000,
+		proxy: {
+			'/page': {
+				target: 'https://www.redis.agency/webflow',
+				changeOrigin: true,
+				rewrite: path => path.replace(/^\/page/, '')
+			}
+		}
+	}
 })
