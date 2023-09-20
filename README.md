@@ -26,5 +26,8 @@
 - `utils` 工具库
 - `views` 页面
 
+
+---
+
 配置`eslint`和`prettier`后，在`webstorm`中设置↓
 ![img.png](docs/img.png)
