@@ -28,7 +28,7 @@ export function loginApi(params: LoginParams) {
           code: 200,
           msg: 'success',
           data: {
-            token: generateToken()
+            token: generateToken(user.username)
           }
         })
       }
