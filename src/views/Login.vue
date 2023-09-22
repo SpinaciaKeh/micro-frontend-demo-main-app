@@ -1,22 +1,29 @@
 <template>
   <div class="page-container login">
-    <el-input v-model="username" class="login-item" placeholder="Please input username">
+    <el-input
+      v-model="username"
+      class="login-item"
+      placeholder="Please input username"
+    >
       <template #append>
         <el-icon>
-          <Iphone/>
+          <Iphone />
         </el-icon>
       </template>
     </el-input>
-    <el-input v-model="password" type="password" class="login-item" placeholder="Please input password">
+    <el-input
+      v-model="password"
+      class="login-item"
+      placeholder="Please input password"
+      type="password"
+    >
       <template #append>
         <el-icon>
-          <Key/>
+          <Key />
         </el-icon>
       </template>
     </el-input>
-    <el-button class="login-item login-btn" @click="login">
-      Login
-    </el-button>
+    <el-button class="login-item login-btn" @click="login"> Login </el-button>
   </div>
 </template>
 
@@ -31,30 +38,29 @@ const password = ref<string>('')
 const authStore = useAuthStore()
 
 const login = () => {
-  authStore.login({username: username.value, password: password.value})
+  authStore.login({ username: username.value, password: password.value })
 }
 </script>
 
 <style lang="scss" scoped>
 .login {
-  
   .login-item {
     font-size: 1rem;
     width: min(30rem, 60vw);
     height: 3rem;
-    
+
     :deep .el-input__wrapper {
       color: #fff;
       border-top-left-radius: 1.5rem;
       border-bottom-left-radius: 1.5rem;
       background-color: transparent;
       box-shadow: 0 0 0 1px #dcdfe6 inset;
-      
+
       &.is-focus {
         box-shadow: 0 0 0 2px var(--highlight-yellow) inset;
       }
     }
-    
+
     :deep .el-input-group__append {
       font-size: 1.2rem;
       padding-right: 1.5rem;
@@ -64,15 +70,15 @@ const login = () => {
       background-color: rgba(255, 255, 255, 0.2);
       box-shadow: 0 0 0 1px #dcdfe6 inset;
     }
-    
+
     :deep .el-input__inner {
       font-family: Consolas, serif;
-      background: transparent;
-      color: #ffffff;
       padding-left: 1rem;
+      color: #ffffff;
+      background: transparent;
     }
   }
-  
+
   .login-btn {
     font-family: Consolas, serif;
     font-size: 1.2rem;
@@ -80,7 +86,7 @@ const login = () => {
     color: #ffffff;
     border-radius: 1.5rem;
     background-color: rgba(249, 249, 249, 0.3);
-    
+
     &:hover {
       color: var(--highlight-yellow);
       border: 1px solid rgba(48, 49, 49, 0.7);

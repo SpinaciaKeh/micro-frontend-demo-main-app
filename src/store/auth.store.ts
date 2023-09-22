@@ -9,7 +9,7 @@ import router from '@/router'
 export const useAuthStore = defineStore('auth', () => {
   const username = ref<string>('')
   const token = ref<string>('')
-  
+
   function logout() {
     username.value = ''
     token.value = ''
@@ -17,22 +17,24 @@ export const useAuthStore = defineStore('auth', () => {
     ElMessage.success('Logout successfully!')
     router.push('/login')
   }
-  
+
   function login(params: LoginParams) {
-    loginApi(params).then((res: SimulateRequest) => {
-      const data = res.data.token
-      token.value = data
-      username.value = params.username
-      setCookie(data)
-      ElMessage.success('Login successfully!')
-      router.push('/home')
-    }).catch((err: SimulateRequest) => {
-      ElMessage.error(err.msg)
-    })
+    loginApi(params)
+      .then((res: SimulateRequest) => {
+        const data = res.data.token
+        token.value = data
+        username.value = params.username
+        setCookie(data)
+        ElMessage.success('Login successfully!')
+        router.push('/home')
+      })
+      .catch((err: SimulateRequest) => {
+        ElMessage.error(err.msg)
+      })
   }
-  
+
   const hasToken = computed(() => token.value !== '')
-  
+
   return {
     username,
     token,

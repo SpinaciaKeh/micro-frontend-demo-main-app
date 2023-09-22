@@ -8,12 +8,12 @@ export function registerApps() {
     registerMicroApps(subApps, {
       beforeLoad: [
         app => {
-        console.log('before load', app)
+          console.log('before load', app)
         }
       ],
       beforeMount: [
         app => {
-        console.log('before mount', app)
+          console.log('before mount', app)
         }
       ],
       afterUnmount: [

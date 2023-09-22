@@ -1,8 +1,12 @@
 # micro-frontend-demo-main-app
 
-`qiankun` + `vue3` + `vite` + `ts`
+基于`qiankun`框架的微前端项目
+主应用配置:
+`vue3` + `vite` + `ts`
 
-### 配置
+---
+
+### 技术栈
 
 - 脚手架工具 `vite`
 - 前端框架 `vue3`
