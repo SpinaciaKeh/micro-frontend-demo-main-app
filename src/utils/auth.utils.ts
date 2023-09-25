@@ -1,4 +1,5 @@
-import CryptoJS from 'crypto-js/core'
+// import CryptoJS from 'crypto-js/core'
+import CryptoES from 'crypto-es'
 
 const secret = 'fake-token-secret-key'
 /**
@@ -15,7 +16,9 @@ export function generateToken(username: string) {
   }
   const code = `${btoa(JSON.stringify(header))}.${btoa(
     JSON.stringify(payload)
-  )}`
-  const signature = CryptoJS.HmacSHA256(code, secret).toString(CryptoJS.enc.Hex)
+  )}`.replace('=', '')
+  const signature = CryptoES.HmacSHA256(code, secret).toString(
+    CryptoES.enc.Base64url
+  )
   return code + '.' + signature
 }
