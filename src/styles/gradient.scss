@@ -8,6 +8,14 @@
 }
 
 .fancy-gradient {
+  background-color: #ffffff;
+  background-image: radial-gradient(80% 80% at top -20% left 70%, #c7faee, transparent),
+  radial-gradient(100% 100% at top 60% left 20%, #ffdbe3, transparent),
+  radial-gradient(80% 80% at top 0% left 0%, #e2d9f8, transparent),
+  radial-gradient(80% 80% at top 80% left 90%, #d8eeff, transparent);
+}
+
+[data-theme='dark'] .fancy-gradient {
   background-color: var(--gradient_bg_color);
   background-image: radial-gradient(
       75% 75% at left 0% top 0%,
@@ -29,12 +37,4 @@
       var(--gradient_spot4_color),
       transparent
   );
-}
-
-.test-gradient {
-  background-color: #ffffff;
-  background-image: radial-gradient(80% 80% at top -20% left 70%, #c7faee, transparent),
-  radial-gradient(100% 100% at top 60% left 20%, #ffdbe3, transparent),
-  radial-gradient(80% 80% at top 0% left 0%, #e2d9f8, transparent),
-  radial-gradient(80% 80% at top 80% left 90%, #d8eeff, transparent);
 }

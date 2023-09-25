@@ -1,4 +1,27 @@
 :root {
-  --highlight-yellow: #f3e588;
+  --highlight-color: #747bff;
   --ivory-white: #ECF0F3;
+  --text-color: #333333;
+}
+
+[data-theme='dark'] {
+  --highlight-color: #f3e588;
+  --text-color: #ffffff;
+}
+
+:root {
+  --primary-color: #fe9f5b;
+  //--secondary-color: #e7e8eb;
+  --secondary-color: transparent;
+  --tertiary-color: #78bae0;
+  --disabled-text-color: #b9bdc9;
+  --bg-color: #ffffff;
+}
+[data-theme='dark'] {
+  --primary-color: #ffe5b5;
+  //--secondary-color: #0a0d12;
+  --secondary-color: transparent;
+  --tertiary-color: #ffffff;
+  --disabled-text-color: #31374c;
+  --bg-color: #1c2138;
 }

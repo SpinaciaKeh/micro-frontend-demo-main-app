@@ -10,6 +10,7 @@ import {
 } from '@element-plus/icons-vue'
 import router from '@/router'
 import { useAuthStore } from '@/store'
+import SwitchTheme from '@/components/SwitchTheme.vue'
 
 const authStore = useAuthStore()
 </script>
@@ -46,6 +47,7 @@ const authStore = useAuthStore()
         </el-icon>
         <router-link to="/app/app-vue2-webpack">App2</router-link>
       </div>
+      <switch-theme />
       <el-icon
         v-if="!authStore.hasToken"
         class="normal-btn"
@@ -69,7 +71,7 @@ const authStore = useAuthStore()
   width: 100vw;
   height: 100vh;
   text-align: center;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .navbar {
@@ -99,7 +101,7 @@ const authStore = useAuthStore()
     gap: 10px;
 
     a {
-      color: #ffffff;
+      color: var(--text-color);
     }
 
     &.home {
@@ -114,18 +116,18 @@ const authStore = useAuthStore()
   }
 
   .navbar-btn:not(.home):hover {
-    color: var(--highlight-yellow);
+    color: var(--highlight-color);
     box-shadow:
       2px 2px 5px rgba(0, 0, 0, 0.4),
       -2px -2px 5px rgba(255, 255, 255, 0.3);
 
     a {
-      color: var(--highlight-yellow);
+      color: var(--highlight-color);
     }
   }
 
   .home:hover {
-    color: var(--highlight-yellow);
+    color: var(--highlight-color);
     box-shadow:
       2px 2px 5px rgba(0, 0, 0, 0.7),
       -2px -2px 5px rgba(255, 255, 255, 0.25);
@@ -136,7 +138,7 @@ const authStore = useAuthStore()
     cursor: pointer;
 
     &:hover {
-      color: var(--highlight-yellow);
+      color: var(--highlight-color);
     }
   }
 }

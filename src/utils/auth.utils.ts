@@ -1,4 +1,3 @@
-// import CryptoJS from 'crypto-js/core'
 import CryptoES from 'crypto-es'
 
 const secret = 'fake-token-secret-key'
@@ -12,7 +11,7 @@ export function generateToken(username: string) {
   }
   const payload = {
     username,
-    exp: Math.round(new Date(Date.now() + 15 * 60 * 1000).getTime() / 1000)
+    exp: new Date(Date.now() + 12 * 60 * 60 * 1000).getTime()
   }
   const code = `${btoa(JSON.stringify(header))}.${btoa(
     JSON.stringify(payload)

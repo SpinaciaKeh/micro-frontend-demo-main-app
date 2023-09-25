@@ -50,21 +50,21 @@ const login = () => {
     height: 3rem;
 
     :deep .el-input__wrapper {
-      color: #fff;
+      color: var(--text-color);
       border-top-left-radius: 1.5rem;
       border-bottom-left-radius: 1.5rem;
       background-color: transparent;
       box-shadow: 0 0 0 1px #dcdfe6 inset;
 
       &.is-focus {
-        box-shadow: 0 0 0 2px var(--highlight-yellow) inset;
+        box-shadow: 0 0 0 2px var(--highlight-color) inset;
       }
     }
 
     :deep .el-input-group__append {
       font-size: 1.2rem;
       padding-right: 1.5rem;
-      color: #fff;
+      color: var(--text-color);
       border-top-right-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
       background-color: rgba(255, 255, 255, 0.2);
@@ -74,7 +74,7 @@ const login = () => {
     :deep .el-input__inner {
       font-family: Consolas, serif;
       padding-left: 1rem;
-      color: #ffffff;
+      color: var(--text-color);
       background: transparent;
     }
   }
@@ -83,12 +83,12 @@ const login = () => {
     font-family: Consolas, serif;
     font-size: 1.2rem;
     transition: all 0.2s ease-out;
-    color: #ffffff;
+    color: var(--text-color);
     border-radius: 1.5rem;
     background-color: rgba(249, 249, 249, 0.3);
 
     &:hover {
-      color: var(--highlight-yellow);
+      color: var(--highlight-color);
       border: 1px solid rgba(48, 49, 49, 0.7);
       background-color: rgba(48, 49, 49, 0.7);
     }

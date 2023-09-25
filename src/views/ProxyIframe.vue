@@ -42,7 +42,7 @@ const enterSourcePage = () => {
   left: 1rem;
   height: 2rem;
   transition: all 0.2s ease-out;
-  color: #fff;
+  color: var(--text-color);
   border: none;
   border-radius: 1rem;
   background-color: #82afd5;
@@ -56,7 +56,7 @@ const enterSourcePage = () => {
   &:hover {
     transform: scale(1.02);
     transform-origin: 1rem 1rem;
-    color: var(--highlight-yellow);
+    color: var(--highlight-color);
     border: none;
     background-position: bottom right;
     box-shadow:

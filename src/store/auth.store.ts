@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-import { removeToken, setCookie } from '@/utils/cookie'
+import { getToken, removeToken, setToken } from '@/utils/cookie'
 import { loginApi } from '@/api/auth.api.ts'
 import { LoginParams, SimulateRequest } from '@/types/auth.type.ts'
 import { ElMessage } from 'element-plus'
@@ -24,7 +24,7 @@ export const useAuthStore = defineStore('auth', () => {
         const data = res.data.token
         token.value = data
         username.value = params.username
-        setCookie(data)
+        setToken(data)
         ElMessage.success('Login successfully!')
         router.push('/home')
       })
@@ -33,7 +33,17 @@ export const useAuthStore = defineStore('auth', () => {
       })
   }
 
-  const hasToken = computed(() => token.value !== '')
+  const hasToken = computed(() => {
+    if (token.value) {
+      return true
+    } else if (!getToken()) {
+      return false
+    } else {
+      token.value = getToken()
+      username.value = JSON.parse(atob(token.value.split('.')[1])).username
+      return true
+    }
+  })
 
   return {
     username,

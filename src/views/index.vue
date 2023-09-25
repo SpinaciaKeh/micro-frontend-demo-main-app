@@ -55,8 +55,8 @@ const authStore = useAuthStore()
     background-color: transparent;
 
     &:hover {
-      color: var(--highlight-yellow);
-      border: 2px solid var(--highlight-yellow);
+      color: var(--highlight-color);
+      border: 2px solid var(--highlight-color);
       background-color: rgba(255, 255, 255, 0.1);
     }
   }
