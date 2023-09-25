@@ -23,8 +23,8 @@ nextTick(() => {
     '.switch-container input[type="checkbox"]'
   )
 
-  function switchTheme(e) {
-    if (e.target.checked) {
+  function switchTheme(e: Event) {
+    if ((e.target as HTMLInputElement).checked) {
       document.documentElement.setAttribute('data-theme', 'dark')
     } else {
       document.documentElement.setAttribute('data-theme', 'light')
