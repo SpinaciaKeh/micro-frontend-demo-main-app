@@ -53,3 +53,11 @@ input[data-autocompleted] {
     background-color: #f9f9f9;
   }
 }
+
+#nprogress .bar {
+  background: linear-gradient(to left, #001a39, #9b70ff, #42ffc6, #ff3b8d) !important;
+}
+
+[data-theme='dark'] #nprogress .bar {
+  background: linear-gradient(to left, #c7faee, #ffdbe3, #e2d9f8, #d8eeff) !important;
+}
