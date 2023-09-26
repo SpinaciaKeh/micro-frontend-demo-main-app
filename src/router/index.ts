@@ -43,6 +43,11 @@ const routes = [
         name: 'login',
         meta: {},
         component: () => import('@/views/Login.vue')
+      },
+      {
+        path: '/404',
+        name: '404 Not Found',
+        component: () => import('@/views/NotFound.vue')
       }
     ]
   }
@@ -51,6 +56,14 @@ const routes = [
 const router = createRouter({
   history: createWebHistory('/'),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (!to.matched.length) {
+    next('/404')
+  } else {
+    next()
+  }
 })
 
 export default router
