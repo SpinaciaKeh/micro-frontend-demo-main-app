@@ -62,3 +62,13 @@
   radial-gradient(74% 86% at 67% 38%, #6dfFAEF5 24%, #073AFF00 100%),
   linear-gradient(125deg, #4eb5FFFF 1%, #4c00FCFF 100%);
 }
+
+#nprogress .bar {
+  background: linear-gradient(
+      to left,
+      var(--gradient-stop-1),
+      var(--gradient-stop-2),
+      var(--gradient-stop-3),
+      var(--gradient-stop-4)
+  ) !important;
+}

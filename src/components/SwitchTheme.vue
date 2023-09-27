@@ -143,6 +143,7 @@ input:checked + .slider-wrapper .theme-btn-slider {
   background: transparent;
   box-shadow: 15px 0 0 0 var(--primary-color);
 }
+
 input:checked + .slider-wrapper {
   .star-1 {
     width: 2px;
@@ -166,14 +167,17 @@ input:checked + .slider-wrapper {
   .star-6 {
     opacity: 1;
   }
+
   .star-4 {
     transition: all 300ms 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
     transform: translate3d(10px, 0, 0);
   }
+
   .star-5 {
     transition: all 300ms 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
     transform: translate3d(0, 0, 0);
   }
+
   .star-6 {
     transition: all 300ms 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
     transform: translate3d(25px, 0, 0);

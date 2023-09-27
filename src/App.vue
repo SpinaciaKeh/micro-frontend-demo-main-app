@@ -50,12 +50,12 @@ const authStore = useAuthStore()
       <switch-theme />
       <el-icon
         v-if="!authStore.hasToken"
-        class="navbar-btn normal-btn"
+        class="navbar-btn"
         @click="router.push('/login')"
       >
         <User />
       </el-icon>
-      <el-icon v-else class="navbar-btn normal-btn" @click="authStore.logout()">
+      <el-icon v-else class="navbar-btn" @click="authStore.logout()">
         <SwitchButton />
       </el-icon>
     </div>
@@ -89,10 +89,12 @@ const authStore = useAuthStore()
     display: flex;
     align-items: center;
     flex-direction: row;
+    box-sizing: content-box;
     height: 1.4rem;
-    margin: 0 0.3rem;
+    margin: 0 0.2rem;
     padding: 0.2rem 0.7rem;
     cursor: pointer;
+    color: var(--text-color);
     border-radius: 0.9rem;
     gap: 10px;
 
@@ -117,10 +119,6 @@ const authStore = useAuthStore()
   .home:hover {
     color: var(--highlight-color);
     box-shadow: var(--neumorphism-shadow-2);
-  }
-
-  .normal-btn {
-    margin: 0 1rem;
   }
 }
 </style>
