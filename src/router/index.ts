@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 const routes = [
@@ -58,19 +57,6 @@ const routes = [
 const router = createRouter({
   history: createWebHistory('/'),
   routes
-})
-
-router.beforeEach((to, _, next) => {
-  NProgress.start()
-  if (!to.matched.length) {
-    next('/404')
-  } else {
-    next()
-  }
-})
-
-router.afterEach(() => {
-  NProgress.done()
 })
 
 export default router

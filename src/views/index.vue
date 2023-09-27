@@ -6,9 +6,9 @@
       <div class="title third">Welcome, {{ authStore.username }}.</div>
     </template>
     <template v-else>
-      <el-button class="handle-btn login" @click="router.push('/login')"
-        >Login</el-button
-      >
+      <el-button class="login-btn" @click="router.push('/login')"
+        >Login
+      </el-button>
     </template>
   </div>
 </template>
@@ -29,7 +29,6 @@ const authStore = useAuthStore()
     &.first {
       font-family: AlumFreePromotional, serif;
       font-size: 5rem;
-      //filter: drop-shadow(5px 5px 0 rgba(255, 246, 0, 0.2));
     }
 
     &.second {
@@ -43,14 +42,14 @@ const authStore = useAuthStore()
     }
   }
 
-  .handle-btn {
+  .login-btn {
     font-family: Consolas, serif;
     font-size: 1rem;
     width: 10rem;
     height: 3rem;
     margin-top: 4rem;
-    color: #ffffff;
-    border: 2px solid #fff;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
     border-radius: 1.5rem;
     background-color: transparent;
 
