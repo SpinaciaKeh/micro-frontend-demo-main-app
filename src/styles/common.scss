@@ -72,3 +72,31 @@
       var(--gradient-stop-4)
   ) !important;
 }
+
+* {
+  cursor: none;
+}
+
+.cursor {
+  position: absolute;
+  z-index: 999;
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
+  border-radius: 50%;
+  background: white;
+  mix-blend-mode: difference;
+  
+  &-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--size);
+    height: var(--size);
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url('@/assets/cursor-outer.svg');
+    background-size: cover;
+    mix-blend-mode: difference;
+  }
+}
