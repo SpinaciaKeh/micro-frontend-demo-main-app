@@ -2,8 +2,8 @@
 
 基于`qiankun`框架的微前端项目
 - [主应用配置](https://github.com/SpinaciaKeh/micro-frontend-demo-main-app)（**本项目**）:  `vue3` + `vite` + `ts`
-- [微应用1配置](https://github.com/SpinaciaKeh/micro-frontend-demo-micro-app-1) `vue3` + `vite` + `ts`
-- [微应用2配置](https://github.com/SpinaciaKeh/micro-frontend-demo-micro-app-2) `vue2` + `webpack5`
+- [微应用1配置](https://github.com/SpinaciaKeh/micro-frontend-demo-micro-app-1):  `vue3` + `vite` + `ts`
+- [微应用2配置](https://github.com/SpinaciaKeh/micro-frontend-demo-micro-app-2):  `vue2` + `webpack5`
 
 ---
 

@@ -1,11 +1,6 @@
 <template>
   <div class="page-container">
-    <iframe
-      id="proxyIfr"
-      height="100%"
-      src="http://localhost:5000/page"
-      width="100%"
-    />
+    <iframe id="proxyIfr" height="100%" src="/page" width="100%" />
     <el-button
       v-if="!isLoading"
       class="enter-btn handle-btn fancy-gradient"

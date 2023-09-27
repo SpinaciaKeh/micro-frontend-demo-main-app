@@ -1,8 +1,8 @@
 <template>
   <div class="info">404 Not Found</div>
   <el-button class="handle-btn fancy-gradient" @click="router.push('/home')"
-    >{{ '<-' }} Back Home</el-button
-  >
+    >{{ '<-' }} Back Home
+  </el-button>
 </template>
 
 <script lang="ts" setup>

@@ -25,10 +25,9 @@
   background-color: #82afd5;
   background-position: top left;
   background-size: 150% 100%;
-  box-shadow:
-    2px 2px 5px rgba(0, 0, 0, 0.3),
-    inset 2px 2px 5px rgba(255, 255, 255, 0.3),
-    inset 0 0 0 1px #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+  inset 2px 2px 5px rgba(255, 255, 255, 0.3),
+  inset 0 0 0 1px #ffffff;
   
   &:hover {
     transform: scale(1.02);
@@ -36,9 +35,30 @@
     color: var(--highlight-color) !important;
     border: none;
     background-position: bottom right;
-    box-shadow:
-      2px 2px 10px rgba(0, 0, 0, 0.5),
-      inset 2px 2px 5px rgba(255, 255, 255, 0.7),
-      inset 0 0 0 1px #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.7),
+    inset 0 0 0 1px #ffffff;
   }
+}
+
+.fancy-gradient {
+  background-color: var(--gradient-bg);
+  background-image: radial-gradient(80% 80% at top -20% left 70%, var(--gradient-stop-1), transparent),
+  radial-gradient(100% 100% at top 60% left 20%, var(--gradient-stop-2), transparent),
+  radial-gradient(80% 80% at top 0% left 0%, var(--gradient-stop-3), transparent),
+  radial-gradient(80% 80% at top 80% left 90%, var(--gradient-stop-4), transparent);
+}
+
+.summer-gradient {
+  background-image: radial-gradient(18% 28% at 24% 50%, #cefAFFFF 7%, #073AFF00 100%),
+  radial-gradient(18% 28% at 18% 71%, #fffFFF59 6%, #073AFF00 100%),
+  radial-gradient(70% 53% at 36% 76%, #73f2FFFF 0, #073AFF00 100%),
+  radial-gradient(42% 53% at 15% 94%, #fffFFFFF 7%, #073AFF00 100%),
+  radial-gradient(42% 53% at 34% 72%, #fffFFFFF 7%, #073AFF00 100%),
+  radial-gradient(18% 28% at 35% 87%, #fffFFFFF 7%, #073AFF00 100%),
+  radial-gradient(31% 43% at 7% 98%, #fffFFFFF 24%, #073AFF00 100%),
+  radial-gradient(21% 37% at 72% 23%, #d3fF6D9C 24%, #073AFF00 100%),
+  radial-gradient(35% 56% at 91% 74%, #8a4FFFF5 9%, #073AFF00 100%),
+  radial-gradient(74% 86% at 67% 38%, #6dfFAEF5 24%, #073AFF00 100%),
+  linear-gradient(125deg, #4eb5FFFF 1%, #4c00FCFF 100%);
 }

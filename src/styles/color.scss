@@ -1,27 +1,47 @@
 :root {
   --highlight-color: #747bff;
-  --ivory-white: #ECF0F3;
   --text-color: #666666;
+  --primary-color: #fe9f5b;
+  --secondary-color: rgba(204, 204, 204, 0.3);
+  --tertiary-color: #78bae0;
+  --bg-color: #ffffff;
 }
 
 [data-theme='dark'] {
   --highlight-color: #f3e588;
   --text-color: #ffffff;
+  --primary-color: #ffe5b5;
+  --secondary-color: rgba(159, 159, 159, 0.3);
+  --tertiary-color: #ffffff;
+  --bg-color: #1c2138;
 }
 
 :root {
-  --primary-color: #fe9f5b;
-  //--secondary-color: #e7e8eb;
-  --secondary-color: transparent;
-  --tertiary-color: #78bae0;
-  --disabled-text-color: #b9bdc9;
-  --bg-color: #ffffff;
+  --gradient-bg: #ffffff;
+  --gradient-stop-1: #c7faee;
+  --gradient-stop-2: #ffdbe3;
+  --gradient-stop-3: #e2d9f8;
+  --gradient-stop-4: #d8eeff;
 }
+
 [data-theme='dark'] {
-  --primary-color: #ffe5b5;
-  //--secondary-color: #0a0d12;
-  --secondary-color: transparent;
-  --tertiary-color: #ffffff;
-  --disabled-text-color: #31374c;
-  --bg-color: #1c2138;
+  --gradient-bg: #006dca;
+  --gradient-stop-1: #001a39;
+  --gradient-stop-2: #9b70ff;
+  --gradient-stop-3: #ff3b8d;
+  --gradient-stop-4: #42ffc6;
+}
+
+:root {
+  --neumorphism-shadow-1: inset -2px -2px 2px rgba(0, 0, 0, 0.2),
+  inset 2px 2px 2px rgba(255, 255, 255, 0.4);
+  --neumorphism-shadow-2: inset -2px -2px 2px rgba(0, 0, 0, 0.15),
+  inset 2px 2px 2px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] {
+  --neumorphism-shadow-1: inset -2px -2px 2px rgba(0, 0, 0, 0.5),
+  inset 2px 2px 2px rgba(255, 255, 255, 0.1);
+  --neumorphism-shadow-2: inset -2px -2px 2px rgba(42, 11, 51, 0.3),
+  inset 2px 2px 2px rgba(222, 181, 220, 0.2);
 }

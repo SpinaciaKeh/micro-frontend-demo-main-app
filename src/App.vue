@@ -50,12 +50,12 @@ const authStore = useAuthStore()
       <switch-theme />
       <el-icon
         v-if="!authStore.hasToken"
-        class="normal-btn"
+        class="navbar-btn normal-btn"
         @click="router.push('/login')"
       >
         <User />
       </el-icon>
-      <el-icon v-else class="normal-btn" @click="authStore.logout()">
+      <el-icon v-else class="navbar-btn normal-btn" @click="authStore.logout()">
         <SwitchButton />
       </el-icon>
     </div>
@@ -83,7 +83,6 @@ const authStore = useAuthStore()
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem;
-  //border-bottom: 1px dotted rgba(100, 108, 255, 0.3);
 
   .navbar-btn {
     font-family: Consolas, serif;
@@ -91,23 +90,14 @@ const authStore = useAuthStore()
     align-items: center;
     flex-direction: row;
     height: 1.4rem;
-    margin: 0 1rem;
-    padding: 0.2rem 1rem;
+    margin: 0 0.3rem;
+    padding: 0.2rem 0.7rem;
     cursor: pointer;
     border-radius: 0.9rem;
-    box-shadow:
-      2px 2px 5px rgba(0, 0, 0, 0.25),
-      -2px -2px 5px rgba(255, 255, 255, 0.2);
     gap: 10px;
 
     a {
       color: var(--text-color);
-    }
-
-    &.home {
-      box-shadow:
-        2px 2px 5px rgba(0, 0, 0, 0.5),
-        -2px -2px 5px rgba(255, 255, 255, 0.15);
     }
 
     &.push {
@@ -117,9 +107,7 @@ const authStore = useAuthStore()
 
   .navbar-btn:not(.home):hover {
     color: var(--highlight-color);
-    box-shadow:
-      2px 2px 5px rgba(0, 0, 0, 0.4),
-      -2px -2px 5px rgba(255, 255, 255, 0.3);
+    box-shadow: var(--neumorphism-shadow-1);
 
     a {
       color: var(--highlight-color);
@@ -128,18 +116,11 @@ const authStore = useAuthStore()
 
   .home:hover {
     color: var(--highlight-color);
-    box-shadow:
-      2px 2px 5px rgba(0, 0, 0, 0.7),
-      -2px -2px 5px rgba(255, 255, 255, 0.25);
+    box-shadow: var(--neumorphism-shadow-2);
   }
 
   .normal-btn {
     margin: 0 1rem;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--highlight-color);
-    }
   }
 }
 </style>

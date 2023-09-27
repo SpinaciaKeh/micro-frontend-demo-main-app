@@ -2,11 +2,7 @@
   font-family: Consolas, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  color-scheme: light dark;
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -35,29 +31,17 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
 }
+
 input[data-autocompleted] {
   background-color: transparent !important;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 #nprogress .bar {
-  background: linear-gradient(to left, #001a39, #9b70ff, #42ffc6, #ff3b8d) !important;
-}
-
-[data-theme='dark'] #nprogress .bar {
-  background: linear-gradient(to left, #c7faee, #ffdbe3, #e2d9f8, #d8eeff) !important;
+  background: linear-gradient(
+      to left,
+      var(--gradient-stop-1),
+      var(--gradient-stop-2),
+      var(--gradient-stop-3),
+      var(--gradient-stop-4)
+  ) !important;
 }

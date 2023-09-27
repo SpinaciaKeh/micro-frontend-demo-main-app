@@ -45,9 +45,6 @@ nextTick(() => {
   user-select: none;
   border-radius: 50px;
   background: var(--secondary-color);
-  box-shadow:
-    2px 2px 10px rgba(0, 0, 0, 0.5),
-    -2px -2px 10px rgba(255, 255, 255, 0.5);
 
   input {
     display: none;
